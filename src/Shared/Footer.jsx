@@ -29,7 +29,7 @@ const Footer = () => {
         <div className="items-center grid-flow-col">
           <img
             className="h-[80px] w-[80px]"
-            src="/public/letter-g.png"
+            src="https://i.ibb.co/3TByMVb/letter-g.png"
             alt=""
             srcSet=""
           />
