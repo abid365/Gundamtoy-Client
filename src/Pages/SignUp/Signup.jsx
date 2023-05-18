@@ -15,6 +15,20 @@ const Signup = () => {
           <input
             type="text"
             placeholder="email"
+            name="email"
+            className="input border-2 border-slate-950"
+          />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-lg bg-pink-100 border-2 border-slate-800 px-5 py-1 rounded">
+              Name
+            </span>
+          </label>
+          <input
+            type="text"
+            placeholder="Your Name"
+            name="name"
             className="input border-2 border-slate-950"
           />
         </div>
@@ -27,14 +41,28 @@ const Signup = () => {
           <input
             type="text"
             placeholder="password"
+            name="password"
+            className="input border-2 border-slate-950"
+          />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-lg bg-pink-100 border-2 border-slate-800 px-5 py-1 rounded">
+              Photo URL
+            </span>
+          </label>
+          <input
+            type="url"
+            placeholder="User Photo URl"
+            name="url"
             className="input border-2 border-slate-950"
           />
         </div>
         <>
           <p className="text-xs bg-red-50 font-bold px-3 py-1 rounded">
-            Don't have an account?
-            <Link className="text-base link link-hover" to="/signup">
-              Sign Up
+            Aready have an account?
+            <Link className="text-base link link-hover" to="/login">
+              Log In
             </Link>
           </p>
         </>
@@ -46,7 +74,7 @@ const Signup = () => {
       <div className="divider text-white font-bold">OR</div>
       {/* sign in with google */}
       <div className="text-center text-lg bg-pink-100 text-dark font-bold py-3">
-        Sign In with Google{" "}
+        Sign Up using Google{" "}
         <button className="btn btn-circle btn-outline">
           <ImGoogle></ImGoogle>
         </button>
