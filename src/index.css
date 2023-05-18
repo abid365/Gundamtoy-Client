@@ -8,6 +8,14 @@
   flex-direction: column;
 }
 
-Footer {
+.footer-web {
   margin-top: auto;
+}
+
+.gundam-btn {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+.gundam-btn:hover {
+  box-sahdow: 4px 4px #000;
 }

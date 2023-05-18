@@ -8,7 +8,9 @@ const Main = () => {
     <div className="parent">
       <NavBar></NavBar>
       <Outlet></Outlet>
-      <Footer></Footer>
+      <div className="footer-web">
+        <Footer></Footer>
+      </div>
     </div>
   );
 };

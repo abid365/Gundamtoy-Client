@@ -31,14 +31,12 @@ const NavBar = () => {
           Home
         </Link>
         <Link className="text-sm font-bold me-2 pt-2 hover:text-indigo-700">
-          About
+          All Toys
         </Link>
         <Link className="text-sm font-bold me-2 pt-2 hover:text-indigo-700">
-          All toys
+          Blog
         </Link>
-        <Link className="text-sm font-bold me-2 pt-2 hover:text-indigo-700">
-          Login
-        </Link>
+        <Link className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"></Link>
       </div>
       {/* buttons */}
       <div className="">
