@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.parent {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+Footer {
+  margin-top: auto;
+}
