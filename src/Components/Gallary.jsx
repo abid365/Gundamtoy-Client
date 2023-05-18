@@ -2,37 +2,35 @@ import React from "react";
 
 const Gallary = () => {
   return (
-    <div>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="card-body">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Email</span>
-            </label>
-            <input
-              type="text"
-              placeholder="email"
-              className="input input-bordered"
-            />
+    <div className="my-10 container mx-auto">
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-end">
+        {/* casousel for left grid item */}
+        <div className="">
+          <h1 className="my-2 text-3xl font-bold">
+            Gundam Toy's Gallary: Scroll To View
+          </h1>
+          <div className="h-96 carousel carousel-vertical border-4 border-slate-950 rounded-box">
+            <div className="carousel-item h-full">
+              <img src="https://i.ibb.co/Bg1BSp6/Gundam-RX-78-2-Isha-Sumantapura.jpg" />
+            </div>
+            <div className="carousel-item h-full">
+              <img src="https://i.ibb.co/5ss1437/gundam-art.jpg" />
+            </div>
+            <div className="carousel-item h-full">
+              <img src="https://i.ibb.co/jDfKGbp/yellow-gungdam.png" />
+            </div>
           </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Password</span>
-            </label>
-            <input
-              type="text"
-              placeholder="password"
-              className="input input-bordered"
-            />
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
-                Forgot password?
-              </a>
-            </label>
-          </div>
-          <div className="form-control mt-6">
-            <button className="btn btn-primary">Login</button>
-          </div>
+        </div>
+        {/* text for left grid */}
+        <div className="pb-5">
+          <h1 className="font-bold text-6xl">
+            Welcome to Gundam Universe: Your Ultimate Destination for Epic
+            Gundam Adventures
+          </h1>
+          <p className="border-b-2 border-slate-500">
+            "Courage is the magic that turns dreams into reality." - Amuro Ray,
+            Mobile Suit Gundam
+          </p>
         </div>
       </div>
     </div>

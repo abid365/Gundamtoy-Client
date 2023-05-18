@@ -1,10 +1,11 @@
 import React from "react";
+import Gallary from "../../Components/Gallary";
 
 const Home = () => {
   return (
-    <div className=" bg-red-100">
+    <div className="bg-red-100">
       {/* banner section */}
-      <div className="bg-red-100">
+      <div className="my-8">
         <div className="mt-4 grid lg:grid-cols-2 sm:grid-cols-1 container mx-auto lg:container lg:mx-auto">
           <div className="lg:mt-8">
             <div>
@@ -53,6 +54,9 @@ const Home = () => {
       </div>
 
       {/* end of banner section */}
+      <div className="py-10 bg-white border-t-4 border-slate-700">
+        <Gallary></Gallary>
+      </div>
     </div>
   );
 };
