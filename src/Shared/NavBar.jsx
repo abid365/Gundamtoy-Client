@@ -18,7 +18,7 @@ const NavBar = () => {
         <span className="lg:inline-block">
           <img
             className="h-[40px] w-[40px] rounded"
-            src="/public/letter-g.png"
+            src="https://i.ibb.co/3TByMVb/letter-g.png"
             alt=""
             srcSet=""
           />
@@ -27,20 +27,32 @@ const NavBar = () => {
       </div>
       {/* middle portion */}
       <div className="lg:flex gap-4 hidden">
-        <Link className="text-sm font-bold me-2 pt-2 hover:text-indigo-700">
+        <Link
+          to="/"
+          className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"
+        >
           Home
         </Link>
-        <Link className="text-sm font-bold me-2 pt-2 hover:text-indigo-700">
+        <Link
+          to="/alltoys"
+          className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"
+        >
           All Toys
         </Link>
-        <Link className="text-sm font-bold me-2 pt-2 hover:text-indigo-700">
+        <Link
+          to="/blog"
+          className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"
+        >
           Blog
         </Link>
         <Link className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"></Link>
       </div>
       {/* buttons */}
       <div className="">
-        <Link className="lg:inline-block hidden rounded bg-slate-800 px-8 py-3 text-base text-white font-bold transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500">
+        <Link
+          to="/login"
+          className="lg:inline-block hidden rounded bg-slate-800 px-8 py-3 text-base text-white font-bold transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
+        >
           Login
         </Link>
 
@@ -52,16 +64,16 @@ const NavBar = () => {
           {menuOpen && (
             <ul className="absolute border-4 border-dark text-sm text-dark right-4 mt-3 bg-amber-200 rounded px-6">
               <li className="px-4 border rounded hover:bg-amber-100 py-1 my-1">
-                Home
+                <Link to="/">Home</Link>
               </li>
               <li className="px-4 border rounded hover:bg-amber-100 py-1 mb-1">
-                About
+                <Link to="/">About</Link>
               </li>
               <li className="px-4 border rounded hover:bg-amber-100 py-1 mb-1">
-                Login
+                <Link to="login">Log in</Link>
               </li>
               <li className="px-4 border rounded hover:bg-amber-100 py-1 mb-1">
-                Blog
+                <Link to="blog">Blog</Link>
               </li>
             </ul>
           )}

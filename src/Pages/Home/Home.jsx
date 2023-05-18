@@ -12,7 +12,7 @@ const Home = () => {
                 Collectors' Paradise: Find Rare and Exclusive Gundam Toys and
                 Action Figures Here!
               </h1>
-              <button className="border-2 border-slate-800 px-4 py-2 gundam-btn my-4">
+              <button className="border-2 border-slate-800 px-4 py-2 gundam-btn my-4 transition ease-in-out delay-150 bg-pink-300 hover:-translate-y-1 hover:scale-110 hover:bg-red-400 duration-300 ...">
                 Explore More
               </button>
               <p className="text-lg w-10/12">
