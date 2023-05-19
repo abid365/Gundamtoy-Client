@@ -6,6 +6,7 @@ import { UserContext } from "../../Auth/AuthProvider";
 
 const Signup = () => {
   const { createUser } = useContext(UserContext);
+  const { googleSignIn } = useContext(UserContext);
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -22,6 +23,17 @@ const Signup = () => {
         console.log("created user", user);
       })
       .catch((error) => console.log(error));
+  };
+  // Todo: sign in using google
+  const wraper = () => {
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className="bg-[url(https://i.ibb.co/fXt5NTb/RX-78-2-Grand-Daddy-Gundam.jpg)] bg-cover bg-center bg-opacity-95 w-full h-full">
@@ -97,7 +109,7 @@ const Signup = () => {
       {/* sign in with google */}
       <div className="text-center text-lg bg-pink-100 text-dark font-bold py-3">
         Sign Up using Google{" "}
-        <button className="btn btn-circle btn-outline">
+        <button onClick={wraper} className="btn btn-circle btn-outline">
           <ImGoogle></ImGoogle>
         </button>
       </div>
