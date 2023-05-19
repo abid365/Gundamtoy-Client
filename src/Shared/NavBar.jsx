@@ -1,11 +1,32 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { UserContext } from "../Auth/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
 
 ("react-router-dom");
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { user, logOut } = useContext(UserContext);
+
+  const [success, setSuccess] = useState("");
+  const notify = () => toast("Logged Out Succesfully!");
+
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {
+        // setSuccess(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  // react toast
+  if (success) {
+    notify();
+  }
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -49,14 +70,29 @@ const NavBar = () => {
       </div>
       {/* buttons */}
       <div className="">
-        <Link
-          to="/login"
-          className="lg:inline-block hidden rounded bg-slate-800 px-8 py-3 text-base text-white font-bold transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
-        >
-          Login
-        </Link>
-
-        {/* res list */}
+        {user ? (
+          <div className="flex items-center gap-1">
+            <Link
+              onClick={handleLogOut}
+              className="lg:inline-block hidden rounded bg-slate-800 px-8 py-3 text-base text-white font-bold transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
+            >
+              Log Out
+            </Link>
+            <div className="avatar">
+              <div className="w-12 rounded-full">
+                <img src={user.photoURL} />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <Link
+            to="/login"
+            className="lg:inline-block hidden rounded bg-slate-800 px-8 py-3 text-base text-white font-bold transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
+          >
+            Log In
+          </Link>
+        )}
+        {/* responsive list */}
         <div className="relative lg:hidden">
           <button onClick={toggleMenu} className="btn-circle me-2 btn">
             <MdOutlineKeyboardArrowDown></MdOutlineKeyboardArrowDown>
