@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home";
 import NotFound from "../Shared/NotFound";
 import Login from "../Pages/Login/Login";
 import Signup from "../Pages/SignUp/Signup";
+import Alltoys from "../Pages/All Toys/Alltoys";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup></Signup>,
+      },
+      {
+        path: "/alltoys",
+        // loader: () => fetch(),
+        element: <Alltoys></Alltoys>,
       },
     ],
     errorElement: <NotFound></NotFound>,

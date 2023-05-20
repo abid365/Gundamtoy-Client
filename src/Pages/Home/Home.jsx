@@ -1,5 +1,6 @@
 import React from "react";
 import Gallary from "../../Components/Gallary";
+import Tabs from "../../Components/Tabs";
 
 const Home = () => {
   return (
@@ -34,8 +35,11 @@ const Home = () => {
       </div>
 
       {/* end of banner section */}
-      <div className="py-10 bg-white border-t-4 border-slate-700">
+      <div className="py-10 bg-white border-t-4 border-slate-200">
         <Gallary></Gallary>
+        <div className="border-t-2 border-dotted border-slate-200 mt-8 p-12">
+          <Tabs></Tabs>
+        </div>
       </div>
     </div>
   );

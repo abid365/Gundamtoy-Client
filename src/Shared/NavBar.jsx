@@ -61,12 +61,17 @@ const NavBar = () => {
           All Toys
         </Link>
         <Link
-          to="/blog"
+          to="/mytoys"
+          className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"
+        >
+          My Toys
+        </Link>
+        <Link
+          to="blog"
           className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"
         >
           Blog
         </Link>
-        <Link className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"></Link>
       </div>
       {/* buttons */}
       <div className="">
@@ -78,7 +83,7 @@ const NavBar = () => {
             >
               Log Out
             </Link>
-            <div className="avatar">
+            <div className="avatar sm:me-1">
               <div className="w-12 rounded-full">
                 <img src={user.photoURL} />
               </div>
@@ -93,7 +98,7 @@ const NavBar = () => {
           </Link>
         )}
         {/* responsive list */}
-        <div className="relative lg:hidden">
+        <div className="relative z-50 lg:hidden">
           <button onClick={toggleMenu} className="btn-circle me-2 btn">
             <MdOutlineKeyboardArrowDown></MdOutlineKeyboardArrowDown>
           </button>
@@ -103,7 +108,7 @@ const NavBar = () => {
                 <Link to="/">Home</Link>
               </li>
               <li className="px-4 border rounded hover:bg-amber-100 py-1 mb-1">
-                <Link to="/">About</Link>
+                <Link to="/alltoys">All-toy</Link>
               </li>
               <li className="px-4 border rounded hover:bg-amber-100 py-1 mb-1">
                 <Link to="login">Log in</Link>
