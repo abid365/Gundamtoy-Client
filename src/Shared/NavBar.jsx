@@ -104,25 +104,25 @@ const NavBar = () => {
           </Link>
         )}
         {/* responsive list */}
-        <div className="relative z-50 lg:hidden">
+        <div className="ms-1 relative z-50 lg:hidden">
           <button onClick={toggleMenu} className="btn-circle me-2 btn">
             <MdOutlineKeyboardArrowDown></MdOutlineKeyboardArrowDown>
           </button>
           {menuOpen && (
-            <ul className="absolute border-4 border-dark text-sm text-dark right-4 mt-3 bg-amber-200 rounded px-6">
-              <li className="px-4 border rounded hover:bg-amber-100 py-1 my-1">
+            <ul className="absolute dropdown-content border-2 border-slate-800 menu p-2 right-4 mt-3 shadow bg-base-100 rounded-box w-40 text-center px-6">
+              <li className="my-1">
                 <Link to="/">Home</Link>
               </li>
-              <li className="px-4 border rounded hover:bg-amber-100 py-1 mb-1">
-                <Link to="/alltoys">All-toy</Link>
+              <li className=" mb-1">
+                <Link to="/alltoys">All toy</Link>
               </li>
-              <li className="px-4 border rounded hover:bg-amber-100 py-1 mb-1">
+              <li className=" mb-1">
                 <Link to="/addtoys">Add toys</Link>
               </li>
-              <li className="px-4 border rounded hover:bg-amber-100 py-1 mb-1">
+              <li className=" mb-1">
                 <Link to="login">Log in</Link>
               </li>
-              <li className="px-4 border rounded hover:bg-amber-100 py-1 mb-1">
+              <li className=" mb-1">
                 <Link to="blog">Blog</Link>
               </li>
             </ul>
