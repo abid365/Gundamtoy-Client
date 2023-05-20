@@ -61,6 +61,12 @@ const NavBar = () => {
           All Toys
         </Link>
         <Link
+          to="/addtoys"
+          className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"
+        >
+          Add toys
+        </Link>
+        <Link
           to="/mytoys"
           className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"
         >
@@ -109,6 +115,9 @@ const NavBar = () => {
               </li>
               <li className="px-4 border rounded hover:bg-amber-100 py-1 mb-1">
                 <Link to="/alltoys">All-toy</Link>
+              </li>
+              <li className="px-4 border rounded hover:bg-amber-100 py-1 mb-1">
+                <Link to="/addtoys">Add toys</Link>
               </li>
               <li className="px-4 border rounded hover:bg-amber-100 py-1 mb-1">
                 <Link to="login">Log in</Link>
