@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../Auth/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddToys = () => {
   const { user } = useContext(UserContext);
@@ -38,12 +40,41 @@ const AddToys = () => {
       },
       body: JSON.stringify(toy),
     })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((res) => {
+        if (res.ok) {
+          toast("✅ SuccessFully Added!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        } else {
+          toast.error("Failed To Add");
+        }
+      })
+      .catch((error) => {
+        toast.error("error occured");
+      });
   };
 
   return (
     <div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      ></ToastContainer>
       <div className="bg-[url(https://i.ibb.co/Xz4f14J/Strike-Gundam-Hector-Trunnec.png)] bg-cover bg-center w-full h-full">
         {/* this is the background of form */}
         <div className="">
@@ -114,17 +145,19 @@ const AddToys = () => {
               </div>
               {/*  */}
               <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-white font-bold">
-                    Sub-Catagory
-                  </span>
+                <label className="text-white font-bold" htmlFor="dropdown">
+                  Select a sub-catagory
                 </label>
-                <input
-                  type="text"
-                  placeholder="Real/Master/High"
-                  className="input input-bordered"
+                <select
                   name="subcatagory"
-                />
+                  className="py-3 rounded-lg bg-white border-2"
+                  id="dropdown"
+                >
+                  <option value="Not Selected">Select a catagory</option>
+                  <option value="Perfect Grade">Perfect Grade</option>
+                  <option value="Master Grade">Master Grade</option>
+                  <option value="High Grade">High Grade</option>
+                </select>
               </div>
               {/*  */}
               <div className="form-control">
