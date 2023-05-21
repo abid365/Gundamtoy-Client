@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ToyRow = ({ toy }) => {
-  console.log(toy);
-  const { ToyName, SellerName, Price, AvailableQuantity, Sub_category, _id } =
-    toy;
+const Mytoyrow = ({ mytoy }) => {
+  console.log(mytoy);
+  const { ToyName, SellerName, Price, AvailableQuantity, Sub_category } = mytoy;
   return (
+    // <div className="">My Toy is loading</div>
     <tbody>
       {/* row 1 */}
       <tr>
@@ -16,7 +16,7 @@ const ToyRow = ({ toy }) => {
         <td>{Price}</td>
         <td>{AvailableQuantity}</td>
         <td>
-          <Link to={`/toy/${_id}`}>
+          <Link>
             <button className="btn-success btn">Details</button>
           </Link>
         </td>
@@ -25,4 +25,4 @@ const ToyRow = ({ toy }) => {
   );
 };
 
-export default ToyRow;
+export default Mytoyrow;

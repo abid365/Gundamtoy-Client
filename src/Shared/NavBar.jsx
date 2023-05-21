@@ -60,18 +60,26 @@ const NavBar = () => {
         >
           All Toys
         </Link>
-        <Link
-          to="/addtoys"
-          className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"
-        >
-          Add toys
-        </Link>
-        <Link
-          to="/mytoys"
-          className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"
-        >
-          My Toys
-        </Link>
+        {user?.email ? (
+          <Link
+            to="/addtoys"
+            className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"
+          >
+            Add toys
+          </Link>
+        ) : (
+          ""
+        )}
+        {user?.email ? (
+          <Link
+            to="/mytoys"
+            className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"
+          >
+            My Toys
+          </Link>
+        ) : (
+          ""
+        )}
         <Link
           to="blog"
           className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"

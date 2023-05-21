@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ImGoogle } from "react-icons/im";
 import { useContext } from "react";
 import { UserContext } from "../../Auth/AuthProvider";
@@ -6,6 +6,9 @@ import { UserContext } from "../../Auth/AuthProvider";
 const Login = () => {
   const { signIn } = useContext(UserContext);
   const { googleSignIn } = useContext(UserContext);
+  // const navigate = useNavigate();
+  // const location = useLocation();
+  // const from = location.state?.from || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -20,6 +23,7 @@ const Login = () => {
       .then((output) => {
         const user = output.user;
         console.log(user);
+        // navigate(from);
       })
       .catch((error) => console.log(error));
   };
