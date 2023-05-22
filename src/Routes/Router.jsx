@@ -10,6 +10,7 @@ import SingleToy from "../Pages/SingleToy/SingleToy";
 import Mytoys from "../Pages/My Toys/Mytoys";
 import PrivateRoute from "./PrivateRoute";
 import Blog from "../Components/Blog";
+import Tabs from "../Components/Tabs";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/",
+        element: (
+          <PrivateRoute>
+            <Tabs></Tabs>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",

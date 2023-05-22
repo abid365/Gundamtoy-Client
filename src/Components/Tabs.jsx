@@ -11,6 +11,7 @@ const Tabs = () => {
   const [perfect, setPerfect] = useState([]);
   const [higher, setHigher] = useState([]);
   const [master, setMaster] = useState([]);
+  const { _id, PictureURL, ToyName, Price, Description } = pg;
 
   useEffect(() => {
     fetch(`https://assignment-11-server-one-henna.vercel.app/toys?`)
@@ -31,7 +32,7 @@ const Tabs = () => {
     .filter((hgrade) => hgrade.Sub_category)
     .slice(1, 3);
 
-  const filteredMaster = higher
+  const filteredMaster = master
     .filter((mgrade) => mgrade.Sub_category)
     .slice(3, 5);
 
@@ -76,21 +77,21 @@ const Tabs = () => {
           <div className=" bg-white rounded-full py-3 w-fit px-3 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3">
             {filteredPerfect.map((pg) => (
               <div
-                key={pg._id}
+                key={_id}
                 className="card w-72 border-2 border-slate-700 p-2 my-3"
               >
                 <figure>
-                  <img src={pg.PictureURL} alt="car!" />
+                  <img src={PictureURL} alt="car!" />
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title font-bold border-2 border-slate-800 px-1 py-1 rounded">
-                    {pg.ToyName}
+                    {ToyName}
                   </h2>
-                  <p>Price: {pg.Price}</p>
-                  <p className="">Rating {pg.Rating}</p>
-                  <small>{pg.Description}</small>
+                  <p>Price: {Price}</p>
+                  <p className="">Rating {Rating}</p>
+                  <small>{Description}</small>
                   <div className="card-actions justify-start">
-                    <Link to="/alltoys" className="btn btn-primary">
+                    <Link to={`/toy/${_id}`} className="btn btn-primary">
                       Details
                     </Link>
                   </div>
@@ -117,7 +118,7 @@ const Tabs = () => {
                   <p className="">Rating {hg.Rating}</p>
                   <small>{hg.Description}</small>
                   <div className="card-actions justify-start">
-                    <Link to="/alltoys" className="btn btn-primary">
+                    <Link to="/login" className="btn btn-primary">
                       Details
                     </Link>
                   </div>
@@ -144,7 +145,7 @@ const Tabs = () => {
                   <p className="">Rating {mg.Rating}</p>
                   <small>{mg.Description}</small>
                   <div className="card-actions justify-start">
-                    <Link to="/alltoys" className="btn btn-primary">
+                    <Link to="/login" className="btn btn-primary">
                       Details
                     </Link>
                   </div>

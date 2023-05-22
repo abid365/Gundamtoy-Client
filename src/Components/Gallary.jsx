@@ -9,8 +9,8 @@ const Gallary = () => {
           <h1 className="my-2 text-xl text-dark font-bold flex justify-center">
             Gundam Toy's Gallary: Scroll To View
           </h1>
-          <div className="h-96 carousel carousel-vertical border-4 border-slate-950 rounded-box">
-            <div className="carousel-item h-full">
+          <div className="h-96 carousel carousel-vertical border-4 border-slate-950 rounded-box w-fit">
+            <div className="carousel-item h-full w-fit">
               <img src="https://i.ibb.co/Bg1BSp6/Gundam-RX-78-2-Isha-Sumantapura.jpg" />
             </div>
             <div className="carousel-item h-full">

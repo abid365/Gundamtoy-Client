@@ -127,9 +127,15 @@ const NavBar = () => {
               <li className=" mb-1">
                 <Link to="/addtoys">Add toys</Link>
               </li>
-              <li className=" mb-1">
-                <Link to="login">Log in</Link>
-              </li>
+              {user ? (
+                <li className=" mb-1">
+                  <Link onClickCapture={handleLogOut}>Log out</Link>
+                </li>
+              ) : (
+                <li className=" mb-1">
+                  <Link to="login">Log in</Link>
+                </li>
+              )}
               <li className=" mb-1">
                 <Link to="blog">Blog</Link>
               </li>
