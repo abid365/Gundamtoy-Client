@@ -38,7 +38,7 @@ const Tabs = () => {
     .filter((mgrade) => mgrade.Sub_category)
     .slice(3, 5);
 
-  console.log(filteredPerfect);
+  // console.log(filteredPerfect);
 
   // toast and redirect to login if user is not logged in
   // const warnLog = () => {

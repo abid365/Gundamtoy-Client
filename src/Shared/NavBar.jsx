@@ -97,6 +97,7 @@ const NavBar = () => {
             >
               Log Out
             </Link>
+
             <div className="avatar sm:me-1">
               <div className="w-12 rounded-full">
                 <img src={user.photoURL} />
@@ -125,10 +126,10 @@ const NavBar = () => {
                 <Link to="/alltoys">All toy</Link>
               </li>
               <li className=" mb-1">
-                <Link to="/addtoys">Add toys</Link>
+                {user ? <Link to="/addtoys">Add toys</Link> : ""}
               </li>
               <li className=" mb-1">
-                <Link to="/mytoys">My toys</Link>
+                {user ? <Link to="/mytoys">My toys</Link> : ""}
               </li>
               {user ? (
                 <li className=" mb-1">
