@@ -38,10 +38,10 @@ const Tabs = () => {
   console.log(filteredPerfect);
 
   return (
-    <div className="mx-2">
-      <div className="flex justify-center my-6 border-2 border-slate-800 rounded-lg">
+    <div className="mx-2 my-6">
+      <div className="flex justify-center">
         <div
-          className={`px-4 py-2 cursor-pointer ${
+          className={`px-4 py-2 rounded border-2 mx-1 border-slate-800 cursor-pointer ${
             activeTab === 1
               ? "bg-pink-300 text-dark"
               : "bg-gray-300 text-gray-700"
@@ -51,7 +51,7 @@ const Tabs = () => {
           Perfect grade
         </div>
         <div
-          className={`px-4 py-2 cursor-pointer ${
+          className={`px-4 py-2 rounded border-2 border-slate-800 cursor-pointer ${
             activeTab === 2
               ? "bg-pink-300 text-dark"
               : "bg-gray-300 text-gray-700"
@@ -61,7 +61,7 @@ const Tabs = () => {
           Higher Grade
         </div>
         <div
-          className={`px-4 py-2 cursor-pointer ${
+          className={`px-4 py-2 mx-1 rounded border-2 border-slate-800 cursor-pointer ${
             activeTab === 3
               ? "bg-pink-300 text-dark"
               : "bg-gray-300 text-gray-700"
@@ -73,7 +73,7 @@ const Tabs = () => {
       </div>
       <div className="mt-4 flex justify-center">
         {activeTab === 1 && (
-          <div className=" bg-white py-3 w-fit px-3">
+          <div className=" bg-white rounded-full py-3 w-fit px-3 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3">
             {filteredPerfect.map((pg) => (
               <div
                 key={pg._id}
@@ -100,7 +100,7 @@ const Tabs = () => {
           </div>
         )}
         {activeTab === 2 && (
-          <div className=" bg-white py-3 w-fit px-3">
+          <div className=" bg-white py-3 w-fit rounded-full px-3 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3">
             {filteredHigher.map((hg) => (
               <div
                 key={hg._id}
@@ -127,7 +127,7 @@ const Tabs = () => {
           </div>
         )}
         {activeTab === 3 && (
-          <div className=" bg-white py-3 w-fit px-3">
+          <div className=" bg-white py-3 rounded-full w-fit px-3 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3">
             {filteredMaster.map((mg) => (
               <div
                 key={mg._id}

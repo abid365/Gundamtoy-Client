@@ -2,6 +2,8 @@ import React from "react";
 import Gallary from "../../Components/Gallary";
 import Tabs from "../../Components/Tabs";
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
+import GundamRx from "../../Components/GundamRx";
+import Store from "../../Components/Store";
 
 const Home = () => {
   return (
@@ -36,7 +38,7 @@ const Home = () => {
       </div>
 
       {/* end of banner section */}
-      <div className="py-10 bg-white border-t-4 border-slate-200">
+      <div className="py-10 bg-sky-200 border-t-4 border-slate-200">
         <Gallary></Gallary>
         <div className="border-t-2 border-dotted border-slate-200 mt-8 p-12">
           <div className="flex items-center flex-col gap-3">
@@ -45,6 +47,10 @@ const Home = () => {
           </div>
           <Tabs></Tabs>
         </div>
+      </div>
+      <GundamRx></GundamRx>
+      <div className="container mx-auto text-center">
+        <Store></Store>
       </div>
     </div>
   );

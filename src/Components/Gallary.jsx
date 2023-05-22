@@ -6,7 +6,7 @@ const Gallary = () => {
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-end">
         {/* casousel for left grid item */}
         <div className="">
-          <h1 className="my-2 text-3xl font-bold">
+          <h1 className="my-2 text-xl text-dark font-bold flex justify-center">
             Gundam Toy's Gallary: Scroll To View
           </h1>
           <div className="h-96 carousel carousel-vertical border-4 border-slate-950 rounded-box">
@@ -23,11 +23,11 @@ const Gallary = () => {
         </div>
         {/* text for left grid */}
         <div className="pb-5">
-          <h1 className="font-bold text-6xl">
+          <h1 className="font-bold text-dark text-6xl">
             Welcome to Gundam Universe: Your Ultimate Destination for Epic
             Gundam Adventures
           </h1>
-          <p className="border-b-2 border-slate-500">
+          <p className="border-b-2  border-slate-500">
             "Courage is the magic that turns dreams into reality." - Amuro Ray,
             Mobile Suit Gundam
           </p>

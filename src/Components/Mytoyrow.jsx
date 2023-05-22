@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Mytoyrow = ({ mytoy }) => {
+const Mytoyrow = ({ mytoy, handleDelete }) => {
   console.log(mytoy);
-  const { ToyName, SellerName, Price, AvailableQuantity, Sub_category } = mytoy;
+  const { ToyName, SellerName, Price, AvailableQuantity, Sub_category, _id } =
+    mytoy;
+
   return (
     // <div className="">My Toy is loading</div>
     <tbody>
@@ -15,9 +17,17 @@ const Mytoyrow = ({ mytoy }) => {
         <td>{Sub_category}</td>
         <td>{Price}</td>
         <td>{AvailableQuantity}</td>
-        <td>
+        <td className="grid grid-cols-2 gap-1">
           <Link>
-            <button className="btn-success btn">Details</button>
+            <button className="text-xs btn btn-success">Update</button>
+          </Link>
+          <Link>
+            <button
+              onClick={() => handleDelete(_id)}
+              className="text-xs btn  btn-error"
+            >
+              Delete
+            </button>
           </Link>
         </td>
       </tr>

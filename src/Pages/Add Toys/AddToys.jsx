@@ -33,7 +33,7 @@ const AddToys = () => {
     console.log(toy);
 
     // send data to server
-    fetch(`http://localhost:5000/addtoys`, {
+    fetch(`https://assignment-11-server-one-henna.vercel.app/addtoys`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

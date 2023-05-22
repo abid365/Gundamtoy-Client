@@ -9,10 +9,10 @@ const PrivateRoute = ({ children }) => {
   <div className="flex flex-col items-center mt-10">
     <progress className="progress w-56"></progress>
   </div>;
-  if (user?.email) {
+  if (user) {
     return children;
   }
-  return <Navigate to="/login" replace></Navigate>;
+  return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
 };
 
 export default PrivateRoute;

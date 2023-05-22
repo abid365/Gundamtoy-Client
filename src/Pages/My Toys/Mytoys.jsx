@@ -19,6 +19,18 @@ const Mytoys = () => {
 
   console.log(mytoys);
 
+  const handleDelete = (id) => {
+    const confirmDel = confirm("Press Ok to proceed deletation");
+    if (confirmDel) {
+      fetch(`https://assignment-11-server-one-henna.vercel.app/addtoys/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+      console.log({ id });
+    }
+  };
+
   return (
     <div className="overflow-x-auto">
       <table className="table table-zebra w-full">
@@ -35,7 +47,11 @@ const Mytoys = () => {
           </tr>
         </thead>
         {mytoys.map((mytoy) => (
-          <Mytoyrow key={mytoy._id} mytoy={mytoy}></Mytoyrow>
+          <Mytoyrow
+            key={mytoy._id}
+            mytoy={mytoy}
+            handleDelete={handleDelete}
+          ></Mytoyrow>
         ))}
       </table>
     </div>
