@@ -1,6 +1,6 @@
 import React from "react";
 import Gallary from "../../Components/Gallary";
-// import Tabs from "../../Components/Tabs";
+import Tabs from "../../Components/Tabs";
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
 import GundamRx from "../../Components/GundamRx";
 import Store from "../../Components/Store";
@@ -45,7 +45,7 @@ const Home = () => {
             <h1 className="text-center font-bold text-4xl">Shop By Catagory</h1>
             <BsFillArrowDownCircleFill className="lg:text-4xl text-xl"></BsFillArrowDownCircleFill>
           </div>
-          {/* <Tabs></Tabs> */}
+          <Tabs></Tabs>
         </div>
       </div>
       <GundamRx></GundamRx>

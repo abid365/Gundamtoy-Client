@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../Auth/AuthProvider";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState(1);
+  const { user } = useContext(UserContext);
 
   const handleTabClick = (tabIndex) => {
     setActiveTab(tabIndex);
@@ -11,7 +13,6 @@ const Tabs = () => {
   const [perfect, setPerfect] = useState([]);
   const [higher, setHigher] = useState([]);
   const [master, setMaster] = useState([]);
-  const { _id, PictureURL, ToyName, Price, Description } = pg;
 
   useEffect(() => {
     fetch(`https://assignment-11-server-one-henna.vercel.app/toys?`)
@@ -77,23 +78,29 @@ const Tabs = () => {
           <div className=" bg-white rounded-full py-3 w-fit px-3 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3">
             {filteredPerfect.map((pg) => (
               <div
-                key={_id}
+                key={pg._id}
                 className="card w-72 border-2 border-slate-700 p-2 my-3"
               >
                 <figure>
-                  <img src={PictureURL} alt="car!" />
+                  <img src={pg.PictureURL} alt="car!" />
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title font-bold border-2 border-slate-800 px-1 py-1 rounded">
-                    {ToyName}
+                    {pg.ToyName}
                   </h2>
-                  <p>Price: {Price}</p>
-                  <p className="">Rating {Rating}</p>
-                  <small>{Description}</small>
+                  <p>Price: {pg.Price}</p>
+                  <p className="">Rating {pg.Rating}</p>
+                  <small>{pg.Description}</small>
                   <div className="card-actions justify-start">
-                    <Link to={`/toy/${_id}`} className="btn btn-primary">
-                      Details
-                    </Link>
+                    {user ? (
+                      <Link to={`/toy/${pg._id}`} className="btn btn-primary">
+                        Details
+                      </Link>
+                    ) : (
+                      <Link to="/login" className="btn btn-primary">
+                        Go To Login
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
@@ -118,9 +125,15 @@ const Tabs = () => {
                   <p className="">Rating {hg.Rating}</p>
                   <small>{hg.Description}</small>
                   <div className="card-actions justify-start">
-                    <Link to="/login" className="btn btn-primary">
-                      Details
-                    </Link>
+                    {user ? (
+                      <Link to={`/toy/${hg._id}`} className="btn btn-primary">
+                        Details
+                      </Link>
+                    ) : (
+                      <Link to="/login" className="btn btn-primary">
+                        Go To Login
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
@@ -145,9 +158,15 @@ const Tabs = () => {
                   <p className="">Rating {mg.Rating}</p>
                   <small>{mg.Description}</small>
                   <div className="card-actions justify-start">
-                    <Link to="/login" className="btn btn-primary">
-                      Details
-                    </Link>
+                    {user ? (
+                      <Link to={`/toy/${mg._id}`} className="btn btn-primary">
+                        Details
+                      </Link>
+                    ) : (
+                      <Link to="/login" className="btn btn-primary">
+                        Go To Login
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>

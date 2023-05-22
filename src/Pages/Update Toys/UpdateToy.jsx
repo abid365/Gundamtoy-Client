@@ -1,44 +1,34 @@
 import React, { useContext } from "react";
+
 import { UserContext } from "../../Auth/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { useLoaderData } from "react-router-dom";
 
-const AddToys = () => {
+const UpdateToy = () => {
   const { user } = useContext(UserContext);
-
-  //   add toy handle function
-  const handleAddToy = (event) => {
+  const data = useLoaderData();
+  const { _id } = data;
+  console.log(_id);
+  const handleUpdate = (event) => {
     event.preventDefault();
     const form = event.target;
-    const seller = user?.displayName;
-    const email = user?.email;
-    const toyname = form.toyname.value;
-    const catagory = form.subcatagory.value;
     const price = form.price.value;
     const quantity = form.quantity.value;
-    const ratings = form.ratings.value;
     const desc = form.description.value;
-    const image = form.image.value;
-    const toy = {
-      ToyName: toyname,
-      Sub_category: catagory,
-      Price: price,
+    const updatedToy = {
       AvailableQuantity: quantity,
-      Rating: ratings,
-      PictureURL: image,
+      Price: price,
       Description: desc,
-      SellerName: seller,
-      SellerEmail: email,
     };
-    console.log(toy);
+    console.log(updatedToy);
 
-    // send data to server
-    fetch(`https://assignment-11-server-one-henna.vercel.app/addtoys`, {
-      method: "POST",
+    // send updated data to server
+    fetch(`http://localhost:5000/addtoydata/${_id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(toy),
+      body: JSON.stringify(updatedToy),
     })
       .then((res) => {
         if (res.ok) {
@@ -61,7 +51,6 @@ const AddToys = () => {
         toast.error("error occured");
       });
   };
-
   return (
     <div>
       <ToastContainer
@@ -82,9 +71,9 @@ const AddToys = () => {
           <div className="card-body ">
             <form
               className="grid grid-cols-1 lg:grid-cols-2 gap-3"
-              onSubmit={handleAddToy}
+              onSubmit={handleUpdate}
             >
-              <div className="form-control">
+              {/* <div className="form-control">
                 <label className="label">
                   <span className="label-text text-white font-bold">
                     Seller Name
@@ -97,9 +86,9 @@ const AddToys = () => {
                   className="input input-bordered"
                   name="seller"
                 />
-              </div>
+              </div> */}
               {/*  */}
-              <div className="form-control">
+              {/* <div className="form-control">
                 <label className="label">
                   <span className="label-text text-white font-bold">
                     Seller Email
@@ -112,9 +101,9 @@ const AddToys = () => {
                   className="input input-bordered"
                   name="email"
                 />
-              </div>
+              </div> */}
               {/*  */}
-              <div className="form-control">
+              {/* <div className="form-control">
                 <label className="label">
                   <span className="label-text text-white font-bold">
                     Toy Pic Url
@@ -129,9 +118,9 @@ const AddToys = () => {
                   className="input input-bordered"
                   name="image"
                 />
-              </div>
+              </div> */}
               {/*  */}
-              <div className="form-control">
+              {/* <div className="form-control">
                 <label className="label">
                   <span className="label-text text-white font-bold">
                     Toy Name
@@ -143,9 +132,9 @@ const AddToys = () => {
                   className="input input-bordered"
                   name="toyname"
                 />
-              </div>
+              </div> */}
               {/*  */}
-              <div className="form-control">
+              {/* <div className="form-control">
                 <label className="text-white font-bold" htmlFor="dropdown">
                   Select a sub-catagory
                 </label>
@@ -159,7 +148,7 @@ const AddToys = () => {
                   <option value="Master Grade">Master Grade</option>
                   <option value="High Grade">High Grade</option>
                 </select>
-              </div>
+              </div> */}
               {/*  */}
               <div className="form-control">
                 <label className="label">
@@ -187,7 +176,7 @@ const AddToys = () => {
                 />
               </div>
               {/*  */}
-              <div className="form-control">
+              {/* <div className="form-control">
                 <label className="label">
                   <span className="label-text text-white font-bold">
                     Ratings
@@ -199,7 +188,7 @@ const AddToys = () => {
                   className="input input-bordered"
                   name="ratings"
                 />
-              </div>
+              </div> */}
               {/*  */}
               <div className="form-control">
                 <label className="label">
@@ -218,7 +207,7 @@ const AddToys = () => {
                 <input
                   className="btn btn-primary btn-block"
                   type="submit"
-                  value="Add Toy"
+                  value="Update Toy"
                 />
               </div>
             </form>
@@ -229,4 +218,4 @@ const AddToys = () => {
   );
 };
 
-export default AddToys;
+export default UpdateToy;

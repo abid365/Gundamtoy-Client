@@ -11,6 +11,7 @@ import Mytoys from "../Pages/My Toys/Mytoys";
 import PrivateRoute from "./PrivateRoute";
 import Blog from "../Components/Blog";
 import Tabs from "../Components/Tabs";
+import UpdateToy from "../Pages/Update Toys/UpdateToy";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,14 @@ const router = createBrowserRouter([
             <Mytoys></Mytoys>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "mytoys/update/:id",
+        element: <UpdateToy></UpdateToy>,
+        loader: ({ params }) =>
+          fetch(
+            `https://assignment-11-server-one-henna.vercel.app/toys/${params.id}`
+          ),
       },
       {
         path: "blog",

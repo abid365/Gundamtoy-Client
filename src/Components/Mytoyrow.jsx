@@ -5,9 +5,6 @@ const Mytoyrow = ({ mytoy, handleDelete }) => {
   console.log(mytoy);
   const { ToyName, SellerName, Price, AvailableQuantity, Sub_category, _id } =
     mytoy;
-  const updateModal = () => {
-    return "";
-  };
 
   return (
     // <div className="">My Toy is loading</div>
@@ -21,10 +18,8 @@ const Mytoyrow = ({ mytoy, handleDelete }) => {
         <td>{Price}</td>
         <td>{AvailableQuantity}</td>
         <td className="grid grid-cols-2 gap-1">
-          <Link>
-            <button onClick={updateModal} className="text-xs btn btn-success">
-              Update
-            </button>
+          <Link to={`/mytoys/update/${_id}`}>
+            <button className="text-xs btn btn-success">Update</button>
           </Link>
           <Link>
             <button

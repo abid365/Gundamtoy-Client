@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../Auth/AuthProvider";
 import Mytoyrow from "../../Components/Mytoyrow";
+import { ToastContainer, toast } from "react-toastify";
 
 const Mytoys = () => {
   const { user } = useContext(UserContext);
@@ -26,13 +27,31 @@ const Mytoys = () => {
         method: "DELETE",
       })
         .then((res) => res.json())
-        .then((data) => console.log(data));
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            // alert("Deleted Successfully");
+            toast.success("🤞 Deleted Successfully! ", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+            const survived = mytoys.filter((mytoy) => mytoy._id !== id);
+            setMytoys(survived);
+          }
+        });
       console.log({ id });
     }
   };
 
   return (
     <div className="overflow-x-auto">
+      <ToastContainer />
       <table className="table table-zebra w-full">
         {/* head */}
         <thead>
