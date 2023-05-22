@@ -19,12 +19,14 @@ const Mytoyrow = ({ mytoy, handleDelete }) => {
         <td>{AvailableQuantity}</td>
         <td className="grid grid-cols-2 gap-1">
           <Link to={`/mytoys/update/${_id}`}>
-            <button className="text-xs btn btn-success">Update</button>
+            <button className="text-xs btn btn-success btn-xs sm:btn-sm md:btn-md lg:btn-lg">
+              Update
+            </button>
           </Link>
           <Link>
             <button
               onClick={() => handleDelete(_id)}
-              className="text-xs btn  btn-error"
+              className="text-xs btn  btn-error btn-xs sm:btn-sm md:btn-md lg:btn-lg"
             >
               Delete
             </button>
