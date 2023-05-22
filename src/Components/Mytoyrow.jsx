@@ -17,7 +17,7 @@ const Mytoyrow = ({ mytoy, handleDelete }) => {
         <td>{Sub_category}</td>
         <td>{Price}</td>
         <td>{AvailableQuantity}</td>
-        <td className="grid grid-cols-2 gap-1">
+        <td className="flex gap-1">
           <Link to={`/mytoys/update/${_id}`}>
             <button className="text-xs btn btn-success btn-xs sm:btn-sm md:btn-md lg:btn-lg">
               Update
