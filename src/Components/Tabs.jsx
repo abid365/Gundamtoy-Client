@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../Auth/AuthProvider";
+import { ToastContainer } from "react-toastify";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -9,7 +10,7 @@ const Tabs = () => {
   const handleTabClick = (tabIndex) => {
     setActiveTab(tabIndex);
   };
-
+  // const [login, setLogin] = useState("'login'");
   const [perfect, setPerfect] = useState([]);
   const [higher, setHigher] = useState([]);
   const [master, setMaster] = useState([]);
@@ -39,8 +40,36 @@ const Tabs = () => {
 
   console.log(filteredPerfect);
 
+  // toast and redirect to login if user is not logged in
+  // const warnLog = () => {
+  //   if (!user) {
+  //     toast("😔 Please Log in first", {
+  //       position: "top-center",
+  //       autoClose: 5000,
+  //       hideProgressBar: false,
+  //       closeOnClick: true,
+  //       pauseOnHover: true,
+  //       draggable: true,
+  //       progress: undefined,
+  //       theme: "light",
+  //     });
+  //   }
+  // };
+
   return (
     <div className="mx-2 my-6">
+      {/* <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      ></ToastContainer> */}
       <div className="flex justify-center">
         <div
           className={`px-4 py-2 rounded border-2 mx-1 border-slate-800 cursor-pointer ${
@@ -93,13 +122,27 @@ const Tabs = () => {
                   <small>{pg.Description}</small>
                   <div className="card-actions justify-start">
                     {user ? (
-                      <Link to={`/toy/${pg._id}`} className="btn btn-primary">
-                        Details
-                      </Link>
+                      <div className="">
+                        <Link to={`/toy/${pg._id}`} className="btn btn-primary">
+                          Details
+                        </Link>
+                        <small className="block mt-3 bg-white p-1 rounded-lg border-2 border-slate-500 font-bold">
+                          🥳 Yaaay goto Details!!
+                        </small>
+                      </div>
                     ) : (
-                      <Link to="/login" className="btn btn-primary">
-                        Go To Login
-                      </Link>
+                      <div className="">
+                        <Link
+                          to="/login"
+                          className="btn btn-primary "
+                          data-tip="hello"
+                        >
+                          Details
+                        </Link>
+                        <small className="block mt-3 bg-white p-1 rounded-lg border-2 border-slate-500 font-bold animate-bounce">
+                          🥺 Pls Log in to view Details
+                        </small>
+                      </div>
                     )}
                   </div>
                 </div>
@@ -126,13 +169,27 @@ const Tabs = () => {
                   <small>{hg.Description}</small>
                   <div className="card-actions justify-start">
                     {user ? (
-                      <Link to={`/toy/${hg._id}`} className="btn btn-primary">
-                        Details
-                      </Link>
+                      <div className="">
+                        <Link to={`/toy/${hg._id}`} className="btn btn-primary">
+                          Details
+                        </Link>
+                        <small className="block mt-3 bg-white p-1 rounded-lg border-2 border-slate-500 font-bold">
+                          🥳 Yaaay goto Details
+                        </small>
+                      </div>
                     ) : (
-                      <Link to="/login" className="btn btn-primary">
-                        Go To Login
-                      </Link>
+                      <div className="">
+                        <Link
+                          to="/login"
+                          className="btn btn-primary "
+                          data-tip="hello"
+                        >
+                          Details
+                        </Link>
+                        <small className="block mt-3 bg-white p-1 rounded-lg border-2 border-slate-500 font-bold animate-bounce">
+                          🥺 Pls Log in to view Details
+                        </small>
+                      </div>
                     )}
                   </div>
                 </div>
@@ -159,13 +216,27 @@ const Tabs = () => {
                   <small>{mg.Description}</small>
                   <div className="card-actions justify-start">
                     {user ? (
-                      <Link to={`/toy/${mg._id}`} className="btn btn-primary">
-                        Details
-                      </Link>
+                      <div className="">
+                        <Link to={`/toy/${mg._id}`} className="btn btn-primary">
+                          Details
+                        </Link>
+                        <small className="block mt-3 bg-white p-1 rounded-lg border-2 border-slate-500 font-bold">
+                          🥳 Yaaay goto Details
+                        </small>
+                      </div>
                     ) : (
-                      <Link to="/login" className="btn btn-primary">
-                        Go To Login
-                      </Link>
+                      <div className="">
+                        <Link
+                          to="/login"
+                          className="btn btn-primary "
+                          data-tip="hello"
+                        >
+                          Details
+                        </Link>
+                        <small className="block mt-3 bg-white p-1 rounded-lg border-2 border-slate-500 font-bold animate-bounce">
+                          🥺 Pls Log in to view Details
+                        </small>
+                      </div>
                     )}
                   </div>
                 </div>

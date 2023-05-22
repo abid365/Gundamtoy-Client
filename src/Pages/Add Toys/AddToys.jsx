@@ -122,10 +122,7 @@ const AddToys = () => {
                 </label>
                 <input
                   type="url"
-                  defaultValue={
-                    "https://m.media-amazon.com/images/I/81j8GYy9pNL.jpg"
-                  }
-                  placeholder="Personal/Enterprise mail"
+                  placeholder="https://example.jpg"
                   className="input input-bordered"
                   name="image"
                 />

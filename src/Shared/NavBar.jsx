@@ -106,7 +106,7 @@ const NavBar = () => {
         ) : (
           <Link
             to="/login"
-            className="lg:inline-block hidden rounded bg-slate-800 px-8 py-3 text-base text-white font-bold transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
+            className="lg:inline-block hidden rounded bg-slate-800 px-8 py-3 text-base text-white font-bold transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 animate-pulse"
           >
             Log In
           </Link>
@@ -127,12 +127,15 @@ const NavBar = () => {
               <li className=" mb-1">
                 <Link to="/addtoys">Add toys</Link>
               </li>
+              <li className=" mb-1">
+                <Link to="/mytoys">My toys</Link>
+              </li>
               {user ? (
                 <li className=" mb-1">
                   <Link onClickCapture={handleLogOut}>Log out</Link>
                 </li>
               ) : (
-                <li className=" mb-1">
+                <li className=" mb-1 animate-pulse text-green-500">
                   <Link to="login">Log in</Link>
                 </li>
               )}

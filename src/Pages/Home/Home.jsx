@@ -43,7 +43,7 @@ const Home = () => {
         <div className="border-t-2 border-dotted border-slate-200 mt-8 p-12">
           <div className="flex items-center flex-col gap-3">
             <h1 className="text-center font-bold text-4xl">Shop By Catagory</h1>
-            <BsFillArrowDownCircleFill className="lg:text-4xl text-xl"></BsFillArrowDownCircleFill>
+            <BsFillArrowDownCircleFill className="lg:text-4xl text-xl animate-bounce"></BsFillArrowDownCircleFill>
           </div>
           <Tabs></Tabs>
         </div>
