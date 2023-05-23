@@ -35,8 +35,8 @@ const UpdateToy = () => {
     )
       .then((res) => {
         if (res.ok) {
-          confirm("Wanna Add This Item?");
-          toast("✅ SuccessFully Added!", {
+          confirm("Wanna update this item?");
+          toast("✅ SuccessFully updated!", {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,
