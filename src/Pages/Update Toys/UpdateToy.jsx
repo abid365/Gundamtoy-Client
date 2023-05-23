@@ -23,13 +23,16 @@ const UpdateToy = () => {
     console.log(updatedToy);
 
     // send updated data to server
-    fetch(`http://localhost:5000/addtoydata/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedToy),
-    })
+    fetch(
+      `https://assignment-11-server-one-henna.vercel.app/addtoydata/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedToy),
+      }
+    )
       .then((res) => {
         if (res.ok) {
           confirm("Wanna Add This Item?");
