@@ -13,7 +13,7 @@ const Home = () => {
         <div className="mt-4 grid lg:grid-cols-2 sm:grid-cols-1 container  lg:container mx-auto lg:px-10">
           <div className="lg:mt-8">
             <div>
-              <h1 className="lg:text-6xl lg:w-full w-10/12 text-4xl font-bold sm:mt-4">
+              <h1 className="lg:text-7xl lg:w-full w-10/12 text-5xl text-slate-950 font-bold sm:mt-4">
                 Collectors' Paradise: Find Rare and Exclusive Gundam Toys and
                 Action Figures Here!
               </h1>

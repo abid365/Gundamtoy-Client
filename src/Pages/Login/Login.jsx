@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ImGoogle } from "react-icons/im";
 import { useContext } from "react";
 import { UserContext } from "../../Auth/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
   const { signIn } = useContext(UserContext);
@@ -24,9 +25,35 @@ const Login = () => {
       .then((output) => {
         const user = output.user;
         console.log(user);
-        navigate(from);
+        if (user) {
+          toast("✅ SuccessFully Logged In!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+        navigate(from, { replace: true });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        if (error) {
+          toast("❌ Credentials didn't match!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+      });
   };
 
   // Todo: sign in using google
@@ -34,15 +61,51 @@ const Login = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
+        if (user) {
+          toast("✅ SuccessFully Logged In!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
       })
       .catch((error) => {
         console.log(error);
+        if (error) {
+          toast("❌ Credentials didn't match!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
       });
   };
 
   return (
     <div className="bg-[url(https://i.ibb.co/Xz4f14J/Strike-Gundam-Hector-Trunnec.png)] bg-cover bg-center bg-opacity-20 w-full h-full">
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      ></ToastContainer>
       {user ? (
         <div className="h-full w-full flex items-center justify-center">
           <h1 className="mt-48 font-extrabold text-dark rounded-lg text-2xl border-2 border-slate-900 p-4 w-fit bg-amber-100">

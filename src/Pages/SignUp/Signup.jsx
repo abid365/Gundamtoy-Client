@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ImGoogle } from "react-icons/im";
 import { useContext } from "react";
 import { UserContext } from "../../Auth/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
 
 const Signup = () => {
   const { createUser } = useContext(UserContext);
@@ -21,8 +22,33 @@ const Signup = () => {
       .then((result) => {
         const user = result.user;
         console.log("created user", user);
+        if (user) {
+          toast("✅ Account Created SuccessFully!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        if (error) {
+          toast("😟 Something went wrong!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+      });
   };
   // Todo: sign in using google
   const wraper = () => {
@@ -37,6 +63,18 @@ const Signup = () => {
   };
   return (
     <div className="bg-[url(https://i.ibb.co/fXt5NTb/RX-78-2-Grand-Daddy-Gundam.jpg)] bg-cover bg-center bg-opacity-95 w-full h-full">
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      ></ToastContainer>
       <div className="card-body flex justify-center items-center">
         <form onSubmit={handleSignUp}>
           <div className="form-control">

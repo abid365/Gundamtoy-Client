@@ -16,7 +16,7 @@ const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(true);
 
   //   create user using email and pass
   const createUser = (email, password) => {
@@ -47,6 +47,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unmount = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoader(false);
     });
     return () => {
       unmount();

@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Mytoys = () => {
   const { user } = useContext(UserContext);
-  console.log(user);
+  // console.log(user);
   const [mytoys, setMytoys] = useState([]);
   //   const mail = user?.email;
   //   console.log(mail);
@@ -18,7 +18,7 @@ const Mytoys = () => {
       .then((data) => setMytoys(data));
   }, [url]);
 
-  console.log(mytoys);
+  // console.log(mytoys);
 
   const handleDelete = (id) => {
     const confirmDel = confirm("Press Ok to proceed deletation");
