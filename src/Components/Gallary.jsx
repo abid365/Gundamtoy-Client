@@ -22,7 +22,7 @@ const Gallary = () => {
           </div>
         </div>
         {/* text for left grid */}
-        <div className="pb-5">
+        <div className="pb-5 text-black">
           <h1 className="font-bold text-dark text-6xl">
             Welcome to Gundam Universe: Your Ultimate Destination for Epic
             Gundam Adventures

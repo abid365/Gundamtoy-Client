@@ -73,10 +73,10 @@ const NavBar = () => {
               srcSet=""
             />
           </span>
-          <h1 className="text-2xl font-extrabold pt-3">GUNDAM</h1>
+          <h1 className="text-2xl font-extrabold pt-3 text-white">GUNDAM</h1>
         </div>
         {/* middle portion */}
-        <div className="lg:flex gap-4 hidden">
+        <div className="lg:flex gap-4 hidden text-white">
           <Link
             to="/"
             className="text-sm font-bold me-2 pt-2 hover:text-indigo-700"

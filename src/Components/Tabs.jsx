@@ -70,7 +70,7 @@ const Tabs = () => {
         pauseOnHover
         theme="light"
       ></ToastContainer> */}
-      <div className="flex justify-center">
+      <div className="flex justify-center text-black">
         <div
           className={`px-4 py-2 rounded border-2 mx-1 border-slate-800 cursor-pointer ${
             activeTab === 1
@@ -102,7 +102,7 @@ const Tabs = () => {
           Master Grade
         </div>
       </div>
-      <div className="mt-4 flex justify-center">
+      <div className="mt-4 flex justify-center text-black">
         {activeTab === 1 && (
           <div className=" bg-white rounded-full py-3 w-fit px-3 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3">
             {filteredPerfect.map((pg) => (

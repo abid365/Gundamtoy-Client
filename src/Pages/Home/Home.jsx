@@ -20,7 +20,7 @@ const Home = () => {
               <button className="border-2 border-slate-800 px-4 py-2 gundam-btn my-4 transition ease-in-out delay-150 bg-pink-300 hover:-translate-y-1 hover:scale-110 hover:bg-red-400 duration-300 ...">
                 Explore More
               </button>
-              <p className="lg:text-lg sm:text-base w-10/12">
+              <p className="lg:text-lg sm:text-base w-10/12 text-slate-900">
                 Step into a World of Wonder and Imagination: Explore our
                 Unparalleled Collection of Robot Toys, Where Imagination Takes
                 Flight
@@ -42,7 +42,9 @@ const Home = () => {
         <Gallary></Gallary>
         <div className="border-t-2 border-dotted border-slate-200 mt-8 p-12">
           <div className="flex items-center flex-col gap-3">
-            <h1 className="text-center font-bold text-4xl">Shop By Catagory</h1>
+            <h1 className="text-center font-bold text-4xl text-black">
+              Shop By Catagory
+            </h1>
             <BsFillArrowDownCircleFill className="lg:text-4xl text-xl animate-bounce"></BsFillArrowDownCircleFill>
           </div>
           <Tabs></Tabs>

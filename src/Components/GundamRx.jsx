@@ -2,7 +2,7 @@ import React from "react";
 
 const GundamRx = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center gap-2 px-10 py-10 bg-white">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center gap-2 px-10 py-10 bg-white text-black">
       <div className="lg:border-l-4 lg:border-sky-400 ">
         <img
           src="https://d3fa68hw0m2vcc.cloudfront.net/dcd/253299797.jpeg"
